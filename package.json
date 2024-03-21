@@ -1,0 +1,23 @@
+{
+  "name": "mern_tutorial",
+  "version": "1.0.0",
+  "description": "ecommerce application built with MERN stack",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rgottiparthi/MERN_Tutorial.git"
+  },
+  "author": "Rohith Gottiparthi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rgottiparthi/MERN_Tutorial/issues"
+  },
+  "homepage": "https://github.com/rgottiparthi/MERN_Tutorial#readme",
+  "dependencies": {
+    "express": "^5.0.0-beta.2"
+  }
+}
