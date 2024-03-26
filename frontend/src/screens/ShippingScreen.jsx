@@ -7,24 +7,24 @@ import CheckoutSteps from '../components/CheckoutSteps';
 import { saveShippingAddress } from '../slices/cartSlice';
 
 const ShippingScreen = () => {
-  const cart = useSelector((state) => state.cart);
-  const { shippingAddress } = cart;
-
-  const [address, setAddress] = useState(shippingAddress.address || '');
-  const [city, setCity] = useState(shippingAddress.city || '');
-  const [postalCode, setPostalCode] = useState(
-    shippingAddress.postalCode || ''
-  );
-  const [country, setCountry] = useState(shippingAddress.country || '');
-
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(saveShippingAddress({ address, city, postalCode, country }));
-    navigate('/payment');
-  };
+    const cart = useSelector((state) => state.cart);
+    // If shippingAddress could be undefined, provide a default empty object
+    const { shippingAddress = {} } = cart;
+  
+    // Use optional chaining and default values to ensure you always work with defined values
+    const [address, setAddress] = useState(shippingAddress?.address || '');
+    const [city, setCity] = useState(shippingAddress?.city || '');
+    const [postalCode, setPostalCode] = useState(shippingAddress?.postalCode || '');
+    const [country, setCountry] = useState(shippingAddress?.country || '');
+  
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+  
+    const submitHandler = (e) => {
+      e.preventDefault();
+      dispatch(saveShippingAddress({ address, city, postalCode, country }));
+      navigate('/payment');
+    };
 
   return (
     <FormContainer>
