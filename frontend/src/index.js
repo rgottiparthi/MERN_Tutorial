@@ -37,35 +37,35 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<App />}>
       <Route index={true} path='/' element={<HomeScreen />} />
-      <Route path='/search/:keyword' element={<HomeScreen />} />
-      <Route path='/page/:pageNumber' element={<HomeScreen />} />
+      <Route path='/index/search/:keyword' element={<HomeScreen />} />
+      <Route path='/index/page/:pageNumber' element={<HomeScreen />} />
       <Route
-        path='/search/:keyword/page/:pageNumber'
+        path='/index/search/:keyword/page/:pageNumber'
         element={<HomeScreen />}
       />
-      <Route path='/product/:id' element={<ProductScreen />} />
-      <Route path='/cart' element={<CartScreen />} />
-      <Route path='/login' element={<LoginScreen />} />
-      <Route path='/register' element={<RegisterScreen />} />
+      <Route path='/index/product/:id' element={<ProductScreen />} />
+      <Route path='/index/cart' element={<CartScreen />} />
+      <Route path='/index/login' element={<LoginScreen />} />
+      <Route path='/index/register' element={<RegisterScreen />} />
       {/* Registered users */}
       <Route path='' element={<PrivateRoute />}>
-        <Route path='/shipping' element={<ShippingScreen />} />
-        <Route path='/payment' element={<PaymentScreen />} />
-        <Route path='/placeorder' element={<PlaceOrderScreen />} />
-        <Route path='/order/:id' element={<OrderScreen />} />
-        <Route path='/profile' element={<ProfileScreen />} />
+        <Route path='/index/shipping' element={<ShippingScreen />} />
+        <Route path='/index/payment' element={<PaymentScreen />} />
+        <Route path='/index/placeorder' element={<PlaceOrderScreen />} />
+        <Route path='/index/order/:id' element={<OrderScreen />} />
+        <Route path='/index/profile' element={<ProfileScreen />} />
       </Route>
       {/* Admin users */}
       <Route path='' element={<AdminRoute />}>
-        <Route path='/admin/orderlist' element={<OrderListScreen />} />
-        <Route path='/admin/productlist' element={<ProductListScreen />} />
+        <Route path='/index/admin/orderlist' element={<OrderListScreen />} />
+        <Route path='/index/admin/productlist' element={<ProductListScreen />} />
         <Route
-          path='/admin/productlist/:pageNumber'
+          path='/index/admin/productlist/:pageNumber'
           element={<ProductListScreen />}
         />
-        <Route path='/admin/product/:id/edit' element={<ProductEditScreen />} />
-        <Route path='/admin/userlist' element={<UserListScreen />} />
-        <Route path='/admin/user/:id/edit' element={<UserEditScreen />} />
+        <Route path='/index/admin/product/:id/edit' element={<ProductEditScreen />} />
+        <Route path='/index/admin/userlist' element={<UserListScreen />} />
+        <Route path='/index/admin/user/:id/edit' element={<UserEditScreen />} />
       </Route>
     </Route>
   )
